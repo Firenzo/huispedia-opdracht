@@ -1,0 +1,171 @@
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+//plugins
+
+//variables
+$header: #FFFFFF;
+$lightText: #ffffff;
+$primary:#FF385C;
+$secondary:#25315A;
+$darkgrey: #434343;
+
+//breakpoints
+@mixin min-375 {@media screen and (min-width: 375px){@content;}}
+@mixin min-600 {@media screen and (min-width: 600px){@content;}}
+@mixin min-768 {@media screen and (min-width: 768px){@content;}}
+@mixin min-834 {@media screen and (min-width: 834px){@content;}}
+@mixin min-1024 {@media screen and (min-width: 1024px){@content;}}
+@mixin min-1100 {@media screen and (min-width: 1100px){@content;}}
+@mixin min-1251 {@media screen and (min-width: 1251px){@content;}}
+@mixin min-1300 {@media screen and (min-width: 1300px){@content;}}
+@mixin min-1500 {@media screen and (min-width: 1500px){@content;}}
+@mixin min-1900 {@media screen and (min-width: 1900px){@content;}}
+@mixin min-2176 {@media screen and (min-width: 2176px){@content;}}
+
+body{
+	font-family: 'Source Sans Pro', sans-serif;
+	background: $secondary;
+	background: -webkit-linear-gradient(30deg,#2d3b6b 45%,#25315a 0) no-repeat center center fixed;
+	overflow-x:hidden;
+
+	h1{
+		font-size:40px;
+		font-family: 'Ubuntu', sans-serif;
+		color: $lightText;
+
+		&.dot:after{
+			content:'.';
+			color:$primary;
+		}
+	}
+
+	h2{
+		font-size:16px;
+		color:$lightText;
+		font-family: 'Ubuntu', sans-serif;
+	}
+
+	a.button{
+		border-radius:80px;
+		background: $primary;
+		padding:15px 40px;
+		font-weight:600;
+		text-decoration:none;
+		color:$lightText;
+
+		&.noline{
+			background:transparent;
+		}
+
+		&.outline{
+			background:transparent;
+			border:1px $primary solid;
+			color:$primary;
+			transition:background 0.4s ease;
+
+			&:hover{
+				background:$primary;
+				color:$lightText;
+			}
+		}
+
+		&.isDisabled{
+			pointer-events: none;
+			background:#ea8194;
+		}
+	}
+
+	section{
+
+		div.container{
+			padding-top:30px;
+			width:90%;
+			margin:auto;
+			display:flex;
+			flex-direction:column;
+			justify-content: center;
+
+			div.heading{
+				margin:auto;
+				max-width:513px;
+
+				h1,h2{
+					text-align:center;
+				}
+
+				h2 {
+					font-family:"Source Sans Pro", Sans-serif;
+					font-weight: 400;
+					margin-top: 10px;
+					margin-bottom:20px;
+				}
+			}
+
+			div.options{
+				margin:auto;
+				//width:100%;
+				@include min-1024{
+					display:flex;
+					justify-content: space-between;
+				}
+			}
+		}
+
+		form{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+
+            label{
+                color:$lightText;
+                font-size:18px;
+                font-weight:600;
+
+                @include min-1024{
+                	font-size:20px;
+                }
+            }
+
+            input{
+                margin-top:12px;
+                height:50px;
+                width:320px;
+                font-size:16px;
+                font-weight:400;
+                text-align:center;
+                color:$darkgrey;
+                border-radius:10px;
+                border: none;
+                margin-bottom:20px;
+
+                &::-webkit-outer-spin-button,
+                &::-webkit-inner-spin-button {
+                	-webkit-appearance:none;
+                	margin:0;
+                }
+
+                input[type=number]{
+                	-moz-appearance:textfield;
+                }
+
+                &::placeholder {
+					color: #ccc;
+				}
+
+                @include min-1024{
+                	width:450px;
+                }
+
+                &.big{
+                	width:280px;
+            		height:65px;
+                	font-size:25px;
+                }
+            }
+        }
+	}
+}
