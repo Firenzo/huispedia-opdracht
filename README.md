@@ -22,3 +22,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+[view project](https://firenzo.github.io/huispedia-opdracht/dist/)
+
